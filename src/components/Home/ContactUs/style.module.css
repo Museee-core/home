@@ -1,7 +1,7 @@
 .wrapper {
   position: relative;
   padding-top: 76px;
-  margin-bottom: 94px;
+  padding-bottom: 120px;
   background-image: url('../images/bg_4.png');
   background-size: 100%;
   background-repeat: no-repeat;
@@ -21,6 +21,7 @@
 
 .form {
   display: flex;
+  height: 405px;
   width: 600px;
   padding: 30px 20px;
   margin: 0 auto;
@@ -32,6 +33,7 @@
   border-radius: 10px;
   background: #16161a66;
   backdrop-filter: blur(20px);
+  transition: height 0.3s;
 }
 
 .form label {
@@ -42,6 +44,10 @@
   border-radius: 3px;
   border: 1px solid rgba(0, 0, 0, 0);
   background: var(--dark-usage-fill-color-fill-0, rgba(255, 255, 255, 0.05));
+}
+
+.form.success {
+  height: 192px;
 }
 
 .form label img {
