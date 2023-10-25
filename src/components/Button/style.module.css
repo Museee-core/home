@@ -1,0 +1,20 @@
+.button {
+  display: block;
+  margin: 0 auto;
+  padding: 20px 30px;
+  border: 4px solid transparent;
+  border-radius: 10px;
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  background-image: linear-gradient(
+      to right,
+      rgb(var(--background)),
+      rgb(var(--background))
+    ),
+    linear-gradient(135deg, #9e41fc, #09a9cc);
+
+  color: #fff;
+  font-family: PingFang SC;
+  font-size: 24px;
+  line-height: 40px; /* 166.667% */
+}

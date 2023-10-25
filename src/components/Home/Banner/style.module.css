@@ -1,0 +1,159 @@
+.wrapper {
+  position: relative;
+  padding-top: 76px;
+  margin-bottom: 94px;
+  background-image: url('../images/bg_1.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+
+.font {
+  font-size: 100px;
+  font-weight: 700;
+  background: var(--local, linear-gradient(125deg, #9e41fc 30%, #09a9cc 100%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.button {
+  display: block;
+  margin: 0 auto;
+  padding: 20px 30px;
+  border: 4px solid transparent;
+  border-radius: 10px;
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  background-image: linear-gradient(
+      to right,
+      rgb(var(--background)),
+      rgb(var(--background))
+    ),
+    linear-gradient(135deg, #9e41fc, #09a9cc);
+
+  color: #fff;
+  font-family: PingFang SC;
+  font-size: 24px;
+  line-height: 40px; /* 166.667% */
+}
+
+.cone,
+.torus,
+.roundCube {
+  position: absolute;
+  left: 50%;
+  transform: translate3d(-50%, 0, 0);
+}
+
+.cone {
+  width: 200px;
+  height: 221.5px;
+  transform: translate3d(245px, -150px, 0);
+}
+
+.torus {
+  width: 107px;
+  height: 110.5px;
+  transform: translate3d(397px, -580px, 0);
+}
+
+.roundCube {
+  width: 225px;
+  height: 225px;
+  transform: translate3d(-600px, -420px, 0);
+}
+
+.title {
+  margin-bottom: 64px;
+  color: #fff;
+  text-align: center;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 40px; /* 125% */
+}
+
+.card {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  padding: 80px 40px;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 10px;
+  background: linear-gradient(
+    131deg,
+    rgb(9, 1, 33) 0%,
+    rgba(42, 38, 52, 0.1) 100%
+  );
+  backdrop-filter: blur(20px);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transform: translate3d(65%, -48px, 0);
+  display: block;
+  width: 200px;
+  height: 200px;
+  border-radius: 95px;
+  background-image: url('../images/Ellipse.png');
+  background-size: contain;
+}
+
+.spec {
+  position: absolute;
+}
+
+.spec:first-child {
+  width: 88px;
+  height: 88px;
+  left: 0;
+  top: 0;
+  transform: translate3d(-40%, -50%, 0);
+}
+
+.spec:nth-child(2) {
+  width: 110px;
+  height: 110px;
+  right: 0;
+  bottom: 0;
+  transform: translate3d(50%, 20%, 0);
+}
+
+.cardTitleEn {
+  position: absolute;
+  left: 40px;
+  top: 50px;
+
+  color: rgba(255, 255, 255, 0.3);
+  font-family: Helvetica;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 50px; /* 125% */
+  text-transform: uppercase;
+}
+
+.cardTitle {
+  color: #fff;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: PingFang SC;
+  font-size: 23px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 30px; /* 130.435% */
+}
+
+.cardContent {
+  color: rgba(255, 255, 255, 0.8);
+  font-family: PingFang SC;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 24px; /* 150% */
+}

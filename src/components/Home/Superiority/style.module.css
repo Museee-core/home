@@ -1,0 +1,66 @@
+.wrapper {
+  position: relative;
+  padding-top: 76px;
+  margin-bottom: 94px;
+  background-image: url('../images/bg_2.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+
+.title {
+  color: #fff;
+  margin-bottom: 73px;
+  text-align: center;
+  font-family: PingFang SC;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 40px; /* 125% */
+}
+
+.cardList {
+  display: flex;
+  margin: 0 auto;
+  width: 1200px;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  padding: 26px 20px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  flex: 1 0 0;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #16161a 0%, rgba(22, 22, 26, 0) 100%);
+  backdrop-filter: blur(20px);
+}
+
+.card img {
+  width: 48px;
+  height: 48px;
+}
+
+.cardTitle {
+  color: #fff;
+  text-align: center;
+  font-family: PingFang SC;
+  font-size: 23px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 30px; /* 130.435% */
+}
+
+.cardContent {
+  color: rgba(255, 255, 255, 0.6);
+  font-family: PingFang SC;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 28px; /* 175% */
+}
