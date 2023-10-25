@@ -6,11 +6,11 @@ import style from './style.module.css'
 
 const ServiceProcess: React.FC = () => {
   return (
-    <div className={style.wrapper}>
-      <div
-        className="h-[750px]"
-        id="ServiceProcess"
-      >
+    <div
+      className={style.wrapper}
+      id="ServiceProcess"
+    >
+      <div className="h-[750px]">
         <div className={style.title}>服务流程</div>
         <Image
           src={flowImage}

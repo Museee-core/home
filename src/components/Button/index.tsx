@@ -5,14 +5,27 @@ import { cn } from '@/utils/cn'
 import style from './style.module.css'
 
 interface ButtonProps extends React.PropsWithChildren {
+  loading?: boolean
+  disabled?: boolean
   className?: string
   onClick?: () => void
 }
 
-const Button: React.FC<ButtonProps> = ({ className, onClick, children }) => {
+const Button: React.FC<ButtonProps> = ({
+  loading,
+  className,
+  disabled,
+  onClick,
+  children,
+}) => {
   return (
     <button
-      className={cn(style.button, className)}
+      disabled={disabled}
+      className={cn(
+        style.button,
+        className,
+        loading ? 'cursor-wait' : undefined,
+      )}
       onClick={onClick}
     >
       {children}

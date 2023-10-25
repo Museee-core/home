@@ -14,7 +14,10 @@ const Banner = () => {
   const router = useRouter()
   return (
     <>
-      <div className={style.wrapper}>
+      <div
+        className={style.wrapper}
+        id="Home"
+      >
         <div className="flex h-[670px] flex-col">
           <div className="font-harmony mb-[37px] mt-[122px] text-center">
             <p className={style.font}>募世AI</p>
@@ -26,12 +29,9 @@ const Banner = () => {
 
           <Button
             onClick={() => {
-              router.replace({
-                pathname: router.pathname,
-                query: {
-                  tab: 'ContactUs',
-                },
-              })
+              document
+                .querySelector('#ContactUs')
+                ?.scrollIntoView({ behavior: 'smooth' })
             }}
           >
             预约专家交流
@@ -53,10 +53,7 @@ const Banner = () => {
           className={style.roundCube}
         />
       </div>
-      <div
-        className="mx-auto h-[585px] w-container py-24"
-        id="Superiority"
-      >
+      <div className="mx-auto h-[585px] w-container py-24">
         <div className={style.title}>
           下一代工作流程将围绕AI与人的协同关系展开，在无缝协作中发挥各自的优势。
         </div>

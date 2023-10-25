@@ -1,3 +1,8 @@
+.wrapper {
+  background: rgba(var(--background) 0.4);
+  backdrop-filter: blur(20px);
+}
+
 .nav {
   position: relative;
   height: 76px;
@@ -10,7 +15,7 @@
 }
 
 .active::after {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   bottom: 12px;

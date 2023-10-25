@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@types/nodemailer':
+    specifier: ^6.4.13
+    version: 6.4.13
   clsx:
     specifier: ^2.0.0
     version: 2.0.0
@@ -17,6 +20,9 @@ dependencies:
   next-translate-plugin:
     specifier: ^2.6.1
     version: 2.6.1(next-translate@2.6.1)
+  nodemailer:
+    specifier: ^6.9.7
+    version: 6.9.7
   prettier:
     specifier: ^3.0.3
     version: 3.0.3
@@ -298,7 +304,12 @@ packages:
     resolution: {integrity: sha512-YRsdVxq6OaLfmR9Hy816IMp33xOBjfyOgUd77ehqg96CFywxAPbDbXvAsuN2KVg2HOT8Eh6uAfU+l4WffwPVrQ==}
     dependencies:
       undici-types: 5.25.3
-    dev: true
+
+  /@types/nodemailer@6.4.13:
+    resolution: {integrity: sha512-889Vq/77eEpidCwh52sVWpbnqQmIwL8yVBekNbrztVEaWKOCRH3Eq6hjIJh1jwsGDEAJEH0RR+YhpH9mfELLKA==}
+    dependencies:
+      '@types/node': 20.8.8
+    dev: false
 
   /@types/prop-types@15.7.9:
     resolution: {integrity: sha512-n1yyPsugYNSmHgxDFjicaI2+gCNjsBck8UX9kuofAKlc0h1bL+20oSF72KeNaW2DUlesbEVCFgyV2dPGTiY42g==}
@@ -1866,6 +1877,11 @@ packages:
     resolution: {integrity: sha512-uYr7J37ae/ORWdZeQ1xxMJe3NtdmqMC/JZK+geofDrkLUApKRHPd18/TxtBOJ4A0/+uUIliorNrfYV6s1b02eQ==}
     dev: true
 
+  /nodemailer@6.9.7:
+    resolution: {integrity: sha512-rUtR77ksqex/eZRLmQ21LKVH5nAAsVicAtAYudK7JgwenEDZ0UIQ1adUGqErz7sMkWYxWTTU1aeP2Jga6WQyJw==}
+    engines: {node: '>=6.0.0'}
+    dev: false
+
   /normalize-path@3.0.0:
     resolution: {integrity: sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==}
     engines: {node: '>=0.10.0'}
@@ -2637,7 +2653,6 @@ packages:
 
   /undici-types@5.25.3:
     resolution: {integrity: sha512-Ga1jfYwRn7+cP9v8auvEXN1rX3sWqlayd4HP7OKk4mZWylEmu3KzXDUGrQUN6Ol7qo1gPvB2e5gX6udnyEPgdA==}
-    dev: true
 
   /update-browserslist-db@1.0.13(browserslist@4.22.1):
     resolution: {integrity: sha512-xebP81SNcPuNpPP3uzeW1NYXxI3rxyJzF3pD6sH4jE7o/IX+WtSpwnVU+qIsDPyk0d3hmFQ7mjqc6AtV604hbg==}

@@ -3,18 +3,16 @@
 import useTranslation from 'next-translate/useTranslation'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
-import React, { useCallback, useMemo } from 'react'
+import React, { useCallback, useMemo, useState } from 'react'
 
 import { cn } from '@/utils/cn'
-import useLayoutEffect from '@/utils/useIsomorphicLayoutEffect'
 
 import logoWhite from '../../../public/logo-White.png'
-
 import style from './style.module.css'
 
 const Header = () => {
-  const router = useRouter()
   const { t } = useTranslation('home')
+  const [tab, setTab] = useState('Home')
 
   const navs = useMemo(
     () => [
@@ -28,27 +26,19 @@ const Header = () => {
 
   const handleNav = useCallback(
     (key: string) => () => {
-      if (router.query.tab !== key) {
-        router.replace({
-          pathname: router.pathname,
-          query: { tab: key },
-        })
+      if (tab !== key) {
+        setTab(key)
       }
+
+      document.querySelector(`#${key}`)?.scrollIntoView({ behavior: 'smooth' })
     },
-    [router],
+    [tab],
   )
 
-  useLayoutEffect(() => {
-    if (router.query.tab) {
-      document.querySelector(`#${router.query.tab}`)?.scrollIntoView()
-    }
-  }, [router.query.tab])
-
   return (
-    <div className="fixed top-0 w-full">
+    <div className={cn('fixed top-0 w-full', style.wrapper)}>
       <div className="mx-auto flex h-[76px] w-container items-center">
         <Image
-          id="Home"
           src={logoWhite}
           alt="museee"
           className="ml-7 h-4 w-[87px]"
@@ -58,7 +48,7 @@ const Header = () => {
             <li
               className={cn(
                 style.nav,
-                router.query.tab === nav.key ? style.active : undefined,
+                tab === nav.key ? style.active : undefined,
               )}
               key={nav.key}
               onClick={handleNav(nav.key)}
