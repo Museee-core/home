@@ -17,7 +17,7 @@ export default async function handler(
   if (req.method === 'POST') {
     const mailOptions = {
       from: process.env.EMAIL_FROM,
-      to: process.env.EMAIL_FROM,
+      to: process.env.EMAIL_CONTACT,
       subject: 'Museee 用户留资信息',
       text: '已收到新的用户留资信息，请尽快处理',
       html: `
