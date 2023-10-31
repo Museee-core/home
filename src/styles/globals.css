@@ -14,6 +14,10 @@ body {
   background: rgb(var(--background));
 }
 
+button {
+  outline: none;
+}
+
 .container {
   max-width: 1440px;
 }
