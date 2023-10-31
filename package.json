@@ -9,8 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@nextui-org/react": "^2.1.13",
+    "@svgr/webpack": "^8.1.0",
     "@types/nodemailer": "^6.4.13",
     "clsx": "^2.0.0",
+    "framer-motion": "^10.16.4",
     "next": "13.5.6",
     "next-translate": "^2.6.1",
     "next-translate-plugin": "^2.6.1",
@@ -19,6 +22,7 @@
     "prettier-plugin-tailwindcss": "^0.5.6",
     "react": "^18",
     "react-dom": "^18",
+    "sass": "^1.69.5",
     "sharp": "^0.32.6",
     "tailwind-merge": "^1.14.0"
   },

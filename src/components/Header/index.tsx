@@ -2,17 +2,20 @@
 
 import useTranslation from 'next-translate/useTranslation'
 import Image from 'next/image'
-import { useRouter } from 'next/router'
 import React, { useCallback, useMemo, useState } from 'react'
 
 import { cn } from '@/utils/cn'
+import { Button } from '@nextui-org/react'
 
 import logoWhite from '../../../public/logo-White.png'
-import style from './style.module.css'
+import Close from '../Icon/Close'
+import Menu from '../Icon/menu'
+import style from './style.module.scss'
 
 const Header = () => {
   const { t } = useTranslation('home')
   const [tab, setTab] = useState('Home')
+  const [open, setOpen] = useState(false)
 
   const navs = useMemo(
     () => [
@@ -29,25 +32,36 @@ const Header = () => {
       if (tab !== key) {
         setTab(key)
       }
-
+      setOpen(false)
       document.querySelector(`#${key}`)?.scrollIntoView({ behavior: 'smooth' })
     },
     [tab],
   )
 
   return (
-    <div className={cn('fixed top-0 w-full', style.wrapper)}>
-      <div className="mx-auto flex h-[76px] w-container items-center">
+    <div className="blur-background fixed top-0 w-full">
+      <div className={style.header}>
         <Image
           src={logoWhite}
           alt="museee"
           className="ml-7 h-4 w-[87px]"
         />
-        <ul className="flex flex-1 cursor-pointer items-center justify-center gap-16">
+
+        <Button
+          isIconOnly
+          className={style.menuButton}
+          onClick={() => {
+            setOpen((state) => !state)
+          }}
+        >
+          {open ? <Close /> : <Menu />}
+        </Button>
+
+        <ul className={cn(style.menu, open && style.open)}>
           {navs.map((nav) => (
             <li
               className={cn(
-                style.nav,
+                style.menuItem,
                 tab === nav.key ? style.active : undefined,
               )}
               key={nav.key}

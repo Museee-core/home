@@ -2,7 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 
 import flowImage from '../images/flows.png'
-import style from './style.module.css'
+import style from './style.module.scss'
 
 const ServiceProcess: React.FC = () => {
   return (
@@ -12,11 +12,7 @@ const ServiceProcess: React.FC = () => {
     >
       <div className="h-[750px]">
         <div className={style.title}>服务流程</div>
-        <Image
-          src={flowImage}
-          alt="flow"
-          className="mx-auto w-[1200px]"
-        />
+        <div className={style.flow} />
       </div>
     </div>
   )

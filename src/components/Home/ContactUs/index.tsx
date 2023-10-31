@@ -3,9 +3,9 @@ import React, { useCallback, useState } from 'react'
 
 import Button from '@/components/Button'
 
-import person from '../images/Person.svg'
-import phone from '../images/Phone.svg'
-import style from './style.module.css'
+import Person from '../images/Person.svg'
+import Phone from '../images/Phone.svg'
+import style from './style.module.scss'
 import { cn } from '@/utils/cn'
 
 const ContactUs: React.FC = () => {
@@ -46,7 +46,10 @@ const ContactUs: React.FC = () => {
       className={style.wrapper}
       id="ContactUs"
     >
-      <div className={style.title}>企业工作流升级 募世AI助您一臂之力</div>
+      <div className={style.title}>
+        <span>企业工作流升级</span>
+        <span> 募世AI助您一臂之力</span>
+      </div>
 
       <div className={cn(style.form, success ? style.success : undefined)}>
         {success ? (
@@ -61,10 +64,7 @@ const ContactUs: React.FC = () => {
         ) : (
           <>
             <label>
-              <Image
-                src={person}
-                alt="person"
-              />
+              <Person />
               <input
                 value={name}
                 onChange={(e) => {
@@ -75,10 +75,7 @@ const ContactUs: React.FC = () => {
               />
             </label>
             <label>
-              <Image
-                src={phone}
-                alt="person"
-              />
+              <Phone />
               <input
                 value={contact}
                 onChange={(e) => {

@@ -13,3 +13,12 @@ body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background));
 }
+
+.container {
+  max-width: 1440px;
+}
+
+.blur-background {
+  background: rgba(var(--background), 0.1);
+  backdrop-filter: blur(6px);
+}

@@ -22,7 +22,7 @@
 .form {
   display: flex;
   height: 405px;
-  width: 600px;
+  max-width: 600px;
   padding: 30px 20px;
   margin: 0 auto;
   flex-direction: column;
@@ -50,7 +50,7 @@
   height: 192px;
 }
 
-.form label img {
+.form label svg {
   margin-right: 8px;
 }
 
@@ -65,4 +65,14 @@
   flex: 1;
   background: transparent;
   outline: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .title {
+    font-size: 24px;
+    margin-bottom: 24px;
+    span {
+      display: block;
+    }
+  }
 }

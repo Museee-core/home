@@ -1,13 +1,12 @@
 import React from 'react'
 
-import style from './style.module.css'
+import style from './style.module.scss'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 
 import Cone from '../images/Cone.png'
 import RoundCube from '../images/RoundCube.png'
 import Torus from '../images/Torus.png'
-import Spec from '../images/spec.png'
 import Button from '@/components/Button'
 
 const Banner = () => {
@@ -18,16 +17,17 @@ const Banner = () => {
         className={style.wrapper}
         id="Home"
       >
-        <div className="flex h-[670px] flex-col">
-          <div className="font-harmony mb-[37px] mt-[122px] text-center">
-            <p className={style.font}>募世AI</p>
-            <p className="text-2xl leading-10">为企业构建专属的工作流</p>
-            <p className="text-2xl leading-10">
+        <div className={style.banner}>
+          <div className={style.slogan}>
+            <p className={style.name}>募世AI</p>
+            <p className={style.content}>为企业构建专属的工作流</p>
+            <p className={style.content}>
               为企业降本增效，让每一个员工的工作变得简明有趣。
             </p>
           </div>
 
           <Button
+            className={style.button}
             onClick={() => {
               document
                 .querySelector('#ContactUs')
@@ -53,22 +53,12 @@ const Banner = () => {
           className={style.roundCube}
         />
       </div>
-      <div className="mx-auto h-[585px] w-container py-24">
+      <div className={style.description}>
         <div className={style.title}>
           下一代工作流程将围绕AI与人的协同关系展开，在无缝协作中发挥各自的优势。
         </div>
 
-        <div className="relative mx-auto flex h-[326px] w-[1200px] gap-10">
-          <Image
-            src={Spec}
-            className={style.spec}
-            alt="spac"
-          />
-          <Image
-            src={Spec}
-            className={style.spec}
-            alt="spac"
-          />
+        <div className={style.cardList}>
           <div className={style.card}>
             <div className={style.cardTitleEn}>Efficiency</div>
             <div className={style.cardTitle}>高效推进工作流程</div>

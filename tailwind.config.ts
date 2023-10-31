@@ -5,20 +5,20 @@ const config: Config = {
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {
       fontFamily: {
         harmony: 'HarmonyOS Sans SC',
       },
-      width: {
-        container: '1440px',
-      },
       backgroundColor: {
         bg: '#060212',
       },
     },
   },
+  darkMode: 'class',
   plugins: [],
 }
+
 export default config

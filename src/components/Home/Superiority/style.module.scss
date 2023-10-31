@@ -1,7 +1,6 @@
 .wrapper {
   position: relative;
-  padding-top: 76px;
-  margin-bottom: 94px;
+  padding: 218px 0;
   background-image: url('../images/bg_2.png');
   background-size: 100%;
   background-repeat: no-repeat;
@@ -19,17 +18,19 @@
   line-height: 40px; /* 125% */
 }
 
+.listWrapper {
+  overflow-x: auto;
+}
+
 .cardList {
-  display: flex;
+  width: 1440px;
   margin: 0 auto;
-  width: 1200px;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 20px;
 }
 
 .card {
-  display: flex;
+  display: inline-flex;
+  width: 320px;
+  margin: 0 20px;
   padding: 26px 20px;
   flex-direction: column;
   justify-content: center;
@@ -63,4 +64,17 @@
   font-style: normal;
   font-weight: 300;
   line-height: 28px; /* 175% */
+}
+
+@media screen and (max-width: 1024px) {
+  .wrapper {
+    padding: 48px 0;
+    background-size: auto;
+    background-position: center;
+  }
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
 }
