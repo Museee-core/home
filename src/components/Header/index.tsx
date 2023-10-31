@@ -8,8 +8,8 @@ import { cn } from '@/utils/cn'
 import { Button } from '@nextui-org/react'
 
 import logoWhite from '../../../public/logo-White.png'
-import Close from '../Icon/Close'
-import Menu from '../Icon/menu'
+import Close from './Close.svg'
+import Menu from './menu.svg'
 import style from './style.module.scss'
 
 const Header = () => {
