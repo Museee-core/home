@@ -21,8 +21,12 @@
 }
 
 .button:hover {
-  border-width: 3px;
-  line-height: 38px;
+  background-image: linear-gradient(
+      to right,
+      rgb(var(--background)),
+      rgb(var(--background))
+    ),
+    linear-gradient(0, #9e41fc, #09a9cc);
 }
 
 .button[disabled] {

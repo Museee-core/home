@@ -13,14 +13,14 @@ import Menu from './menu.svg'
 import style from './style.module.scss'
 
 const Header = () => {
-  const { t } = useTranslation('home')
+  const { t } = useTranslation('common')
   const [tab, setTab] = useState('Home')
   const [open, setOpen] = useState(false)
 
   const navs = useMemo(
     () => [
       { key: 'Home', label: t('nav.home') },
-      { key: 'Superiority', label: t('nav.superiority') },
+      { key: 'Advantage', label: t('nav.advantage') },
       { key: 'ServiceProcess', label: t('nav.serviceProcess') },
       { key: 'ContactUs', label: t('nav.contactUs') },
     ],

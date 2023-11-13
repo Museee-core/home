@@ -1,23 +1,28 @@
-import Image from 'next/image'
+import useTranslation from 'next-translate/useTranslation'
 import React, { useCallback, useState } from 'react'
 
 import Button from '@/components/Button'
-
-import Person from '../images/Person.svg'
-import Phone from '../images/Phone.svg'
-import style from './style.module.scss'
 import { cn } from '@/utils/cn'
 
-const ContactUs: React.FC = () => {
-  const [name, setName] = React.useState('')
-  const [contact, setContact] = React.useState('')
-  const [demands, setDemands] = React.useState('')
+import Company from '../images/Company.svg'
+import Email from '../images/Email.svg'
+import Person from '../images/Person.svg'
+import Phone from '../images/Phone.svg'
+import Scope from '../images/scope.svg'
+import style from './style.module.scss'
 
+const fields = ['company', 'fullName', 'phone', 'email', 'useCase']
+const images = [Company, Person, Phone, Email, Scope]
+
+const ContactUs: React.FC = () => {
+  const { t } = useTranslation('home')
+  const [form, setForm] = useState<Record<string, string>>({})
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
 
   const handleSend = useCallback(async () => {
-    if (name && contact && demands) {
+    const { company, fullName, phone, email, useCase } = form
+    if (fullName && (phone || email) && useCase) {
       setLoading(true)
       try {
         await fetch('/api/contactus', {
@@ -26,20 +31,21 @@ const ContactUs: React.FC = () => {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            name,
-            contact,
-            demands,
+            company,
+            fullName,
+            phone,
+            email,
+            useCase,
           }),
         })
         setSuccess(true)
-        setName('')
-        setContact('')
-        setDemands('')
+        setForm({})
+        setLoading(true)
       } finally {
         setLoading(false)
       }
     }
-  }, [contact, demands, name])
+  }, [form])
 
   return (
     <div
@@ -47,8 +53,7 @@ const ContactUs: React.FC = () => {
       id="ContactUs"
     >
       <div className={style.title}>
-        <span>企业工作流升级</span>
-        <span> 募世AI助您一臂之力</span>
+        <span>{t('contactus.title')}</span>
       </div>
 
       <div className={cn(style.form, success ? style.success : undefined)}>
@@ -59,53 +64,46 @@ const ContactUs: React.FC = () => {
               setSuccess(false)
             }}
           >
-            再次预约
+            {t('contactus.again')}
           </div>
         ) : (
           <>
-            <label>
-              <Person />
-              <input
-                value={name}
-                onChange={(e) => {
-                  setName(e.target.value)
-                }}
-                name="name"
-                placeholder="输入您的姓名"
-              />
-            </label>
-            <label>
-              <Phone />
-              <input
-                value={contact}
-                onChange={(e) => {
-                  setContact(e.target.value)
-                }}
-                name="contact"
-                placeholder="输入您的联系方式"
-              />
-            </label>
-            <label>
-              <textarea
-                value={demands}
-                onChange={(e) => {
-                  setDemands(e.target.value)
-                }}
-                rows={4}
-                name="demands"
-                placeholder="您的使用场景"
-              />
-            </label>
+            {(
+              t('contactus.form', undefined, {
+                returnObjects: true,
+              }) as string[]
+            ).map((item, index) => {
+              const Icon = images[index]
+              return (
+                <label key={index}>
+                  <Icon />
+                  <input
+                    value={form[fields[index]]}
+                    onChange={(e) => {
+                      setForm({
+                        ...form,
+                        [fields[index]]: e.target.value,
+                      })
+                    }}
+                    name="name"
+                    placeholder={item}
+                  />
+                </label>
+              )
+            })}
           </>
         )}
 
         <Button
-          disabled={loading || (!success && (!name || !contact || !demands))}
+          disabled={
+            loading ||
+            !(form.fullName && (form.phone || form.email) && form.useCase)
+          }
           loading={loading}
           className="w-full"
           onClick={success ? undefined : handleSend}
         >
-          {success ? '感谢您的预约，我们将与您尽快联系' : '预约专家交流'}
+          {t(success ? 'contactus.success' : 'appointment')}
         </Button>
       </div>
     </div>

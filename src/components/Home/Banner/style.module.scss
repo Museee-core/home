@@ -109,12 +109,19 @@
   }
 
   .cardContent {
+    margin-bottom: 12px;
     color: rgba(255, 255, 255, 0.5);
     font-family: PingFang SC;
     font-size: 16px;
     font-style: normal;
     font-weight: 300;
     line-height: 24px; /* 150% */
+
+    span {
+      font-weight: 700;
+      margin-right: 8px;
+      font-size: 1.25em;
+    }
   }
 }
 

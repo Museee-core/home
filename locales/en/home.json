@@ -1,8 +1,73 @@
 {
-  "nav": {
-    "home": "Home",
-    "superiority": "Superiority",
-    "serviceProcess": "Service Process",
-    "contactUs": "Contact US"
+  "appointment": "Make an appointment with MUSEEE.AI",
+  "contactus": {
+    "title": "Upgrade Your Enterprise Workflow with MUSEEE.AI's Expertise",
+    "form": ["Company", "Full Name", "Phone", "Email", "Use Case"],
+    "again": "Appointment again",
+    "success": "Thank you for your appointment, we will contact you as soon as possible"
+  },
+  "banner": {
+    "name": "MUSEEE.AI",
+    "slogan": [
+      "Next-Gen Workflows for Human-AI Collaboration",
+      "Tailored for Enterprise, Collaborating with Employees"
+    ],
+    "description": {
+      "title": [
+        "In the future workflows advocated by MUSEEE,",
+        "humans serve as Muse-like sources of inspiration and encouragement,",
+        "while AI seamlessly collaborates with humans, leveraging its strengths."
+      ],
+      "content": [
+        [
+          "Efficiency",
+          "Efficient Workflow Advancement",
+          "AI",
+          "handles simple repetitive tasks, completes preliminary task execution, and iterates based on feedback.",
+          "Humans",
+          "Humans focus their work on more creative tasks while also fine-tuning, making decisions, and providing feedback."
+        ],
+        [
+          "Evolution",
+          "Autonomous Process Evolution",
+          "AI",
+          "learns to use tools, templates, and tasks, performs initial configurations, and continuously upgrades within the workflow.",
+          "Humans",
+          "conduct audits and make fine-tuned adjustments to ensure that the tools truly serve people."
+        ],
+        [
+          "Equity",
+          "Equity-Centric Assessment of Results",
+          "AI",
+          "avoids judgment bias due to subjective opinions, provides fair assessments of tasks, and offers strong support for decision-making.",
+          "Humans",
+          "promptly gather comprehensive and objective data, conduct final reviews, and provide feedback on outcomes."
+        ]
+      ]
+    }
+  },
+  "advantage": {
+    "title": "Technical Advantages",
+    "content": [
+      {
+        "title": "Workflow Copilot",
+        "description": "Our Copilot provides services and support for workflow design, configuration, execution, and results evaluation, significantly reducing manual costs and enhancing execution quality."
+      },
+      {
+        "title": "Industry Templates",
+        "description": "By combining domain knowledge, specialized models, and industry-specific workflow/task templates from vertical clients and third parties, we create industry templates to better and more efficiently serve customers within the ecosystem."
+      },
+      {
+        "title": "Customized RAG",
+        "description": "Industry-trained Copilots help computers better understand information in various domains, similar to how people acquire specialized knowledge, enabling more precise domain-specific knowledge delivery."
+      },
+      {
+        "title": "Multimodal Specialized Model Library",
+        "description": "Based on industry reserves, we offer specialized tools for different industries, continually updating and improving them to efficiently and professionally complete tasks in various industries."
+      }
+    ]
+  },
+  "serviceProcess": {
+    "title": "服务流程"
   }
 }

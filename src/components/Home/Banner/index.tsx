@@ -1,16 +1,15 @@
-import React from 'react'
-
-import style from './style.module.scss'
-import { useRouter } from 'next/router'
+import useTranslation from 'next-translate/useTranslation'
 import Image from 'next/image'
+
+import Button from '@/components/Button'
 
 import Cone from '../images/Cone.png'
 import RoundCube from '../images/RoundCube.png'
 import Torus from '../images/Torus.png'
-import Button from '@/components/Button'
+import style from './style.module.scss'
 
 const Banner = () => {
-  const router = useRouter()
+  const { t } = useTranslation('home')
   return (
     <>
       <div
@@ -19,11 +18,19 @@ const Banner = () => {
       >
         <div className={style.banner}>
           <div className={style.slogan}>
-            <p className={style.name}>募世AI</p>
-            <p className={style.content}>为企业构建专属的工作流</p>
-            <p className={style.content}>
-              为企业降本增效，让每一个员工的工作变得简明有趣。
-            </p>
+            <p className={style.name}>{t('banner.name')}</p>
+            {(
+              t('banner.slogan', undefined, {
+                returnObjects: true,
+              }) as string[]
+            ).map((str, index) => (
+              <p
+                className={style.content}
+                key={index}
+              >
+                {str}
+              </p>
+            ))}
           </div>
 
           <Button
@@ -34,7 +41,7 @@ const Banner = () => {
                 ?.scrollIntoView({ behavior: 'smooth' })
             }}
           >
-            预约专家交流
+            {t('appointment')}
           </Button>
         </div>
         <Image
@@ -55,36 +62,37 @@ const Banner = () => {
       </div>
       <div className={style.description}>
         <div className={style.title}>
-          下一代工作流程将围绕AI与人的协同关系展开，在无缝协作中发挥各自的优势。
+          {(
+            t('banner.description.title', undefined, {
+              returnObjects: true,
+            }) as string[]
+          ).map((str, index) => (
+            <div key={index}>{str}</div>
+          ))}
         </div>
 
         <div className={style.cardList}>
-          <div className={style.card}>
-            <div className={style.cardTitleEn}>Efficiency</div>
-            <div className={style.cardTitle}>高效推进工作流程</div>
-            <div className={style.cardContent}>
-              AI
-              承担简单重复的工作，完成任务的初步执行，并基于反馈迭代。人将工作时间聚焦在更有创造力的事情上，同时完成精调、决策和反馈。
+          {(
+            t('banner.description.content', undefined, {
+              returnObjects: true,
+            }) as string[][]
+          ).map((str, index) => (
+            <div
+              className={style.card}
+              key={index}
+            >
+              <div className={style.cardTitleEn}>{str[0]}</div>
+              <div className={style.cardTitle}>{str[1]}</div>
+              <div className={style.cardContent}>
+                <span>{str[2]}</span>
+                {str[3]}
+              </div>
+              <div className={style.cardContent}>
+                <span>{str[4]}</span>
+                {str[5]}
+              </div>
             </div>
-          </div>
-          <div className={style.card}>
-            <div className={style.cardTitleEn}>Evolution</div>
-            <div className={style.cardTitle}>自主优化进程</div>
-            <div className={style.cardContent}>
-              AI
-              学习调用工具、模板与任务，进行初步配置，并在工作流中不断优化升级。
-              人进行审核并配置微调，让工具真正为人服务。
-            </div>
-          </div>
-          <div className={style.card}>
-            <div className={style.cardTitleEn}>Equity</div>
-            <div className={style.cardTitle}>公正评判效果</div>
-            <div className={style.cardContent}>
-              AI
-              避免主观偏见带来的评判偏差，对任务进行公正评判，为决策提供有力依据。
-              人及时客观全面数据，对结果进行终核及反馈。
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </>
