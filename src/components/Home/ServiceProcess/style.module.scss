@@ -23,10 +23,14 @@
   display: block;
   margin: 0 auto;
   width: 1200px;
-  background-image: url('../images/flows.png');
+  background-image: url('../images/flows_1.png');
   background-size: cover;
   width: 1211px;
   height: 459px;
+
+  &[lang='en'] {
+    background-image: url('../images/flows_1_en.png');
+  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -34,6 +38,10 @@
     background-image: url('../images/flows_2.png');
     width: 728px;
     height: 459px;
+
+    &[lang='en'] {
+      background-image: url('../images/flows_2_en.png');
+    }
   }
 }
 
@@ -52,5 +60,9 @@
     background-image: url('../images/flows_3.png');
     width: 355px;
     height: 661px;
+
+    &[lang='en'] {
+      background-image: url('../images/flows_3_en.png');
+    }
   }
 }
