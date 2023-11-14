@@ -19,7 +19,6 @@ const Header = () => {
 
   const navs = useMemo(
     () => [
-      { key: 'Home', label: t('nav.home') },
       { key: 'Advantage', label: t('nav.advantage') },
       { key: 'ServiceProcess', label: t('nav.serviceProcess') },
       { key: 'ContactUs', label: t('nav.contactUs') },
@@ -44,7 +43,10 @@ const Header = () => {
         <Image
           src={logoWhite}
           alt="museee"
-          className="ml-7 h-4 w-[87px]"
+          className="ml-7 h-4 w-[87px] cursor-pointer"
+          onClick={() => {
+            handleNav('Home')()
+          }}
         />
 
         <Button
