@@ -58,6 +58,7 @@
   .card {
     position: relative;
     display: flex;
+    flex: 1;
     overflow: hidden;
     padding: 80px 40px;
     flex-direction: column;
