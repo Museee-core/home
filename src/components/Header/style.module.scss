@@ -1,10 +1,18 @@
 .header {
+  position: relative;
   max-width: 1440px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   height: 76px;
   align-items: center;
+  z-index: 10000;
+
+  img {
+    position: absolute;
+    left: 0;
+    top: 30px;
+  }
 }
 
 .menuButton {
@@ -46,6 +54,10 @@
 @media screen and (max-width: 1024px) {
   .header {
     height: 46px;
+    justify-content: end;
+    img {
+      top: 15px;
+    }
   }
 
   .menuButton {
